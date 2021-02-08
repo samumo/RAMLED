@@ -8,8 +8,8 @@ headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 # Name array containing strings of which LEDs to turn on
 # If two or more LEDs have the same name each matching LED will be turned on
 name_array = []
-name_array.append('B2.1.4')
-'''
+name_array.append('stairwell')
+''''B2.1.4'
 name_array.append('B2.1.2')
 name_array.append('B2.1.3')
 '''
