@@ -65,6 +65,7 @@ apartment_data_writer(3, [7, 10, 11], [1, 7])
 apartment_data_writer(4, [8, 9], [1, 7])
 
 nonapartment_data_writer(6, "stairwell")
+nonapartment_data_writer(3, "ground_floor")
 
 
 json.dumps(data, indent=4)
