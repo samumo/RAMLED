@@ -3,22 +3,8 @@ import json
 # var to contain output data
 data = []
 
-# patterns to generate output.  [core number, [apartment numbers(as list)], [floors(as list)]]
-# patterns = [
-
-# pattern = [1, [1,2,3], [1,12]]
-
-'''
-    [1, [1,2,3], [1,12]]
-    [2, [4,5,6], [1,6]],
-    [2, [4,5,6,7], [7,12]],
-    [3, [7,10,11], [1, 6]],
-    [4, [8,9], [1,6]],
-]
-'''
-
 # var for "value" in output, this sets the default brightness of the LEDs
-value = 255
+value = 130
 
 led_count = 0
 
@@ -56,7 +42,7 @@ def nonapartment_data_writer(no_of_leds, name):
 
 
 # Function call with arguments - (core, apartment numbers, floors)
-# This call basically maps the LEDs to their apartments and floors.
+# This call maps the LEDs to their apartments and floors.
 # Core is not used for the JSON config file, it is used to identify the physical location of LEDs
 apartment_data_writer(1, [1,2,3], [1,13])
 apartment_data_writer(2, [4, 5, 6], [1, 7])
@@ -64,13 +50,13 @@ apartment_data_writer(2, [4, 5, 6, 7], [7, 13])
 apartment_data_writer(3, [7, 10, 11], [1, 7])
 apartment_data_writer(4, [8, 9], [1, 7])
 
-nonapartment_data_writer(6, "stairwell")
-nonapartment_data_writer(3, "ground_floor")
+nonapartment_data_writer(6, "B2.stairwell")
+nonapartment_data_writer(10, "B2.GF")
 
 
 json.dumps(data, indent=4)
 
 with open('data.json', 'w') as outfile:
-    # Convert the object to a string
+    # Convert the object to a JSON file
     json.dump(data, outfile)
 
